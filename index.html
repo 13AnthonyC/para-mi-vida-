@@ -5,16 +5,28 @@
 
 <style>
 body{
-background:black;
+background:linear-gradient(180deg,#000000,#1a001a);
 color:white;
 text-align:center;
 font-family:Arial;
 overflow:hidden;
+padding:40px;
 }
 
 h1{
 color:pink;
-font-size:40px;
+font-size:45px;
+}
+
+h2{
+color:#ffd700;
+}
+
+p{
+font-size:18px;
+max-width:600px;
+margin:auto;
+line-height:1.6;
 }
 
 .heart{
@@ -22,12 +34,35 @@ position:fixed;
 top:-10px;
 color:pink;
 font-size:24px;
-animation:fall 5s linear infinite;
+animation:fall linear infinite;
+}
+
+.star{
+position:fixed;
+color:white;
+font-size:10px;
+animation:twinkle 2s infinite alternate;
+}
+
+button{
+margin-top:30px;
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:20px;
+background:pink;
+color:black;
+cursor:pointer;
 }
 
 @keyframes fall{
 0%{transform:translateY(-10px);}
 100%{transform:translateY(100vh);}
+}
+
+@keyframes twinkle{
+from{opacity:0.2;}
+to{opacity:1;}
 }
 </style>
 </head>
@@ -36,22 +71,48 @@ animation:fall 5s linear infinite;
 
 <h1>🌸 Para mi princesa 🌸</h1>
 
-<p>Si hoy el mundo fue pesado contigo...</p>
+<p>Si hoy el mundo se puso pesado contigo, recuerda algo</p>
 
-<h2>☀️ Tú eres un rayo de luz ☀️</h2>
+<h2>Tú eres un rayo de luz eres una mujer fuerte</h2>
 
 <p>
+A veces las personas tienen nubes en el corazón<br>
+y cuando ven a alguien que brilla, intentan apagarlo.<br><br>
+
+Pero la luz verdadera no se apaga.<br>
+Y tú… brillas demasiado bonito princesa ✨
+</p>
+
+<br>
+
+<h2>💌 Mensaje especial 💌</h2>
+
+<p>
+Si hoy fue un día difícil en tu trabajo,<br>
+quiero que recuerdes esto:<br><br>
+
 Eres maravillosa mi amor<br>
-Estoy orgulloso de ti<br>
-Eres la mejor persona del mundo
+Estoy orgulloso de ti y de lo que eres<br>
+Eres la mejor persona del mundo<br><br>
+
+Y aunque el mundo hoy haya sido gris contigo<br>
+para mí sigues siendo <b>mi princesa y mi rayo de sol que ilumina mi vida.</b> ✨
 </p>
 
+<br>
+
+<h2>Estado actual</h2>
+
 <p>
-Para mí siempre serás  
-<b>mi princesa y mi rayo de sol</b>
+🧠 Estrés: detectado<br>
+❤️ Amor por ti: infinito<br>
+🤗 Abrazos pendientes: muchos
 </p>
+
+<button onclick="mensaje()">Presiona si estás triste 💗</button>
 
 <script>
+
 function heart(){
 let h=document.createElement("div");
 h.className="heart";
@@ -64,6 +125,24 @@ setTimeout(()=>{h.remove()},5000);
 }
 
 setInterval(heart,200);
+
+function star(){
+let s=document.createElement("div");
+s.className="star";
+s.innerHTML="✦";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+document.body.appendChild(s);
+}
+
+for(let i=0;i<60;i++){
+star();
+}
+
+function mensaje(){
+alert("Mi princesa 💗 recuerda que eres fuerte, valiosa y la luz más bonita que ilumida todos mis dias y toda mi vida, siempre estaré contigo.");
+}
+
 </script>
 
 </body>
