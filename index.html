@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Para mi princesa</title>
+
+<style>
+body{
+background:black;
+color:white;
+text-align:center;
+font-family:Arial;
+overflow:hidden;
+}
+
+h1{
+color:pink;
+font-size:40px;
+}
+
+.heart{
+position:fixed;
+top:-10px;
+color:pink;
+font-size:24px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10px);}
+100%{transform:translateY(100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌸 Para mi princesa 🌸</h1>
+
+<p>Si hoy el mundo fue pesado contigo...</p>
+
+<h2>☀️ Tú eres un rayo de luz ☀️</h2>
+
+<p>
+Eres maravillosa mi amor<br>
+Estoy orgulloso de ti<br>
+Eres la mejor persona del mundo
+</p>
+
+<p>
+Para mí siempre serás  
+<b>mi princesa y mi rayo de sol</b>
+</p>
+
+<script>
+function heart(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💗";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(h);
+
+setTimeout(()=>{h.remove()},5000);
+}
+
+setInterval(heart,200);
+</script>
+
+</body>
+</html>
